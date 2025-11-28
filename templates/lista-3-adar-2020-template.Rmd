@@ -358,7 +358,7 @@ str(wtd_df)
 - - -
 
 9. Importe no R o arquivo excel com a climatologia das temperaturas mínimas do INMET no período de 1981-2010, disponível
-[aqui](https://portal.inmet.gov.br/uploads/normais/Temperatura-Minima_NCB_1961-1990.xls). Mostre a estrutura dos dados e certifique-se de as colunas dos meses e ano são numéricas.
+[aqui](https://portal.inmet.gov.br/uploads/normais/Normal-Climatologica-TMIN.xlsx). Mostre a estrutura dos dados e certifique-se de as colunas dos meses e ano são numéricas.
 
 ```{r}
 # sua resposta aqui
