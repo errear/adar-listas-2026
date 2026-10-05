@@ -1,13 +1,18 @@
 ---
 title: "Lista de Exercícios 1 - ADAR/UFSM"
 author: "Jônatan Tatsch"
-date: "`r Sys.Date()`"
-output:
-  html_document: default
-  pdf_document: default
+date: today
+date-format: YYYY-MM-DD
+format:
+  html:
+    embed-resources: true
+  pdf: default
+engine: knitr
 ---
 
-```{r setup, include=FALSE}
+```{r}
+#| label: setup
+#| include: false
 knitr::opts_chunk$set(echo = TRUE,
                       comment = "#>",
                       prompt = FALSE, 
@@ -47,7 +52,7 @@ knitr::opts_chunk$set(echo = TRUE,
 
 3. Calcule $\sqrt{16}$, ${16^{0.5}}^{3}$, ${(16^{0.5})}^{3}$ e $4^{\frac{3}{2}}$.
 
-```{r }
+```{r}
 # sua resposta aqui
 ```
 
@@ -56,7 +61,7 @@ knitr::opts_chunk$set(echo = TRUE,
 
 4. Teste as expressões `log10(1000)`, `log(1000)`, `exp(log(1000))`. Depois teste a expressão `log2(64)`. Verifique se você entendeu as diferentes funções logarítmicas.
 
-```{r }
+```{r}
 # sua resposta aqui
 ```
 
@@ -102,7 +107,7 @@ knitr::opts_chunk$set(echo = TRUE,
     r. Velocidade angular da Terra: $\Omega=7.29 \times 10^{-5} \left[rad \, s^{-1}\right]$
 
 
-```{r }
+```{r}
 # sua resposta aqui
 ```
 
@@ -110,7 +115,7 @@ knitr::opts_chunk$set(echo = TRUE,
 
 6. (a) Como você pode fazer para que a constante `pi` seja mostrada com 20 dígitos? (b) Como voltar a trabalhar com 7 dígitos novamente? c. Mostre o número neperiano com 7 dígitos.
 
-```{r }
+```{r}
 # sua resposta aqui
 ```
 
@@ -124,7 +129,7 @@ T_{w}=T\cdot atan\left [ 0.151977\cdot \left ( UR+8.313659 \right )^{1/2} \right
 0.00391838\left ( UR \right )^{3/2}\cdot atan\left ( 0.023101\cdot UR \right )-4.686035
 \end{aligned} 
 $$
-```{r }
+```{r}
 # sua resposta aqui
 ```
 
@@ -139,7 +144,11 @@ $$
  
     utilizando o conjunto de equações de pedotransferência abaixo ([Tomasela et al. 2003](https://dl.sciencesocieties.org/publications/sssaj/abstracts/67/4/1085)):
 
-```{r , echo = FALSE, fig.fullwidth = TRUE, eval = TRUE, fig.align='center'}
+```{r}
+#| echo: false
+#| column: page
+#| eval: true
+#| fig-align: 'center'
 knitr::include_graphics('conj-eqs-tomasella2003.png')
 
 ```
@@ -148,7 +157,7 @@ knitr::include_graphics('conj-eqs-tomasella2003.png')
 $SI$ é a porcentagem de silte no solo, $CL$ é a porcentagem de argila, $Db$ é a densidade do solo e $Me$ é a umidade equivalente em %.
 
 
-```{r }
+```{r}
 # sua resposta aqui
 ```
 
@@ -157,7 +166,7 @@ $SI$ é a porcentagem de silte no solo, $CL$ é a porcentagem de argila, $Db$ é
 9. Arredonde para 2 casas decimais os resultados da questão 8. Dica ver `?round`.
 
 
-```{r }
+```{r}
 # sua resposta aqui
 ```
 

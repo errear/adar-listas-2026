@@ -2,7 +2,10 @@
 title: "Lista de Exercícios 3 - ADAR/UFSM"
 author: "Seu nome aqui"
 date: "2021-01-08"
-output: html_document
+format:
+  html:
+    embed-resources: true
+engine: knitr
 ---
 
 
@@ -176,7 +179,8 @@ tibble [923 × 4] (S3: tbl_df/tbl/data.frame)
 
    d. Para tornar este dados mais fáceis de entender, crie e adicione nomes às variáveis da tabela de dados importada usando os novos nomes para as variáveis, conforme tabela abaixo.
    
-```{r, echo = FALSE}
+```{r}
+#| echo: false
 structure(list(nomes_originais = c(
   "data", "PRESSÃO ATMOSFERICA hPa",
   "VENTO VELOCIDADE", "VENTO DIREÇÃO graus", "RADIACAO GLOBAL KJM",
@@ -237,7 +241,8 @@ tibble [730 x 183] (S3: tbl_df/tbl/data.frame)
 
 Baixando os dados.
 
-```{r, eval=FALSE}
+```{r}
+#| eval: false
 getwd()
 # sua resposta aqui
 link <- "https://www.dropbox.com/s/w3wp6iwxqex95ep/S_America_model_wtd_v2.nc?dl=1"
@@ -269,7 +274,8 @@ wtd
    d. Converta os dados importados em um quadro de dados (*data frame*) incluindo as coordenadas das células do raster e ignorando as células sem informação (oceanos). 
 
 
-```{r, eval = FALSE}
+```{r}
+#| eval: false
 
 library(tictoc)
 tic()
@@ -328,7 +334,7 @@ str(wtd_df)
 
    e. Mostre as primeiras e as últimas 10 linhas dos dados.
 
- ```{r}
+```{r}
 # sua resposta aqui
 ``` 
     
