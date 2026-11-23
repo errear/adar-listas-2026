@@ -1,5 +1,5 @@
 # adar-202002-listas
-Repo para templates das listas de exercícios do curso ADAR do 2° semestre de 2020 e correção das listas dos alunos.
+Repo para templates das listas de exercícios do curso ADAR e correção das listas dos alunos.
 
 Os quatro templates estão em `templates/`, no formato Quarto (`.qmd`), com
 código R executado pelo knitr. Os enunciados e o código dos exercícios foram

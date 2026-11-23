@@ -57,7 +57,7 @@ tibble [923 × 4] (S3: tbl_df/tbl/data.frame)
 ```
 
    d. Utilize a função adequada para importar os dados do arquivo `previsoes-enos.txt`, referentes à previsão iniciada em Junho de 2020. A variável da letra **b** pode ser útil. Faça as tranformações necessárias para obter os dados na estrutura mostrada abaixo, esperada como resultado. {#enosdf}
-   
+
 ```
 #str(prev_enos_jun2020)
 'data.frame':	24 obs. of  11 variables:
@@ -72,7 +72,7 @@ tibble [923 × 4] (S3: tbl_df/tbl/data.frame)
  $ FMA        : num  NA NA NA 58 16 60 NA NA 50 -82 ...
  $ tipo_modelo: chr  "  D" "  D" "  D" "  D" ...
  $ modelo     : chr  " NASA GMAO" " NCEP CFSv" " JMA" " BCC_CSM11" ...
- 
+
 #tail(prev_enos_jun2020)
 #     JJA  JAS  ASO  SON  OND  NDJ  DJF  JFM  FMA tipo_modelo     modelo
 # 22  -36  -35  -38  -41  -45  -48  -50  -47  -39           S   FSU REGR
@@ -87,10 +87,10 @@ tibble [923 × 4] (S3: tbl_df/tbl/data.frame)
 
 
 
-- - - 
+- - -
 
 
-3. a. Escreva o quadro de dados do [último item](#enosdf) da questão anterior em um arquivo excel no **formato `xlsx`** e nomeado `previsoes-enos.xlsx`. 
+3. a. Escreva o quadro de dados do [último item](#enosdf) da questão anterior em um arquivo excel no **formato `xlsx`** e nomeado `previsoes-enos.xlsx`.
 
 
 ```{r}
@@ -105,7 +105,7 @@ tibble [923 × 4] (S3: tbl_df/tbl/data.frame)
 ```
 
    c. Importe no R o arquivo `previsoes-enos.xlsx` e mostre a estrutura dos dados importados.
-   
+
 
 
 ```
@@ -172,13 +172,13 @@ tibble [923 × 4] (S3: tbl_df/tbl/data.frame)
 
 
    c. Importe o arquivo no R selecionado somente os dados das variáveis meteorológicas após a linha com a informação da hora (`HORA_UTC`).
-   
+
 ```{r}
 # sua resposta aqui
 ```
 
    d. Para tornar este dados mais fáceis de entender, crie e adicione nomes às variáveis da tabela de dados importada usando os novos nomes para as variáveis, conforme tabela abaixo.
-   
+
 ```{r}
 #| echo: false
 structure(list(nomes_originais = c(
@@ -228,7 +228,7 @@ tibble [730 x 183] (S3: tbl_df/tbl/data.frame)
 # sua resposta aqui
 ```
 
-   
+
 
 
 
@@ -246,8 +246,8 @@ Baixando os dados.
 getwd()
 # sua resposta aqui
 link <- "https://www.dropbox.com/s/w3wp6iwxqex95ep/S_America_model_wtd_v2.nc?dl=1"
-download.file(link, 
-              destfile = "S_America_model_wtd_v2.nc", 
+download.file(link,
+              destfile = "S_America_model_wtd_v2.nc",
               mode = "wb"
               )
 ```
@@ -264,14 +264,14 @@ download.file(link,
    c. Importe os dados para o R usando o pacote raster.
 
 ```{r}
-# sua resposta aqui
-library(raster)
-#wtd <- brick("S_America_model_wtd_v2.nc")
-wtd <- raster("S_America_model_wtd_v2.nc")
-wtd
+## sua resposta aqui
+# library(raster)
+# #wtd <- brick("S_America_model_wtd_v2.nc")
+# wtd <- raster("S_America_model_wtd_v2.nc")
+# wtd
 ```
 
-   d. Converta os dados importados em um quadro de dados (*data frame*) incluindo as coordenadas das células do raster e ignorando as células sem informação (oceanos). 
+   d. Converta os dados importados em um quadro de dados (*data frame*) incluindo as coordenadas das células do raster e ignorando as células sem informação (oceanos).
 
 
 ```{r}
@@ -314,18 +314,18 @@ str(wtd_df)
 # sua resposta aqui
 ```
 
-   b. Defina o nome das variáveis como:  year  month  day  RMM1  RMM2  phase  amplitude status. Tente obter os nomes das variáveis do próprio link para os dados (a releitura [desta seção](https://lhmet.github.io/adar-ebook/arquivos-texto.html#arquivos-texto-n%C3%A3o-estruturados) do livro e [deste apêndice](https://lhmet.github.io/adar-ebook/amostras-pequenas-de-dados.html) pode ajudar). Mostre os 10 primeiros valores da variável `RMM1`. 
+   b. Defina o nome das variáveis como:  year  month  day  RMM1  RMM2  phase  amplitude status. Tente obter os nomes das variáveis do próprio link para os dados (a releitura [desta seção](https://lhmet.github.io/adar-ebook/arquivos-texto.html#arquivos-texto-n%C3%A3o-estruturados) do livro e [deste apêndice](https://lhmet.github.io/adar-ebook/amostras-pequenas-de-dados.html) pode ajudar). Mostre os 10 primeiros valores da variável `RMM1`.
 
 ```{r}
 # sua resposta aqui
 ```
 
    c. Escreva os dados importados em um arquivo excel no **formato `xls`** e nomeado `mjo.xls`. Dê uma olhada [nesta seção](https://lhmet.github.io/adar-ebook/arquivos-excel.html#export-xls) do livro.
-    
+
 ```{r}
 # sua resposta aqui
 ```
-    
+
    d. Importe no R o arquivo excel nomeado `mjo.xls` e mostre qual a classe dos dados importados.
 
 ```{r}
@@ -336,8 +336,8 @@ str(wtd_df)
 
 ```{r}
 # sua resposta aqui
-``` 
-    
+```
+
    f. Qual o código para mostrar quantas linhas e colunas possui a tabela de dados.
 
 ```{r}
@@ -352,7 +352,7 @@ str(wtd_df)
 
 
 
-- - - 
+- - -
 
 8. Importe as **anomalias padronizadas** dos dados do [SOI](http://www.cpc.ncep.noaa.gov/data/indices/soi) (2ª tabela, linhas após  \"STANDARDIZED    DATA\"). Veja [esta seção do livro](https://lhmet.github.io/adar-ebook/arquivos-texto.html#arquivos-texto-n%C3%A3o-estruturados) para detalhes. Mostre as primeiras e as últimas linhas dos dados importados.
 
@@ -373,8 +373,8 @@ str(wtd_df)
 - - -
 
 10. Faça *download* de dados gradeados de precipitação diário para todo Brasil com resolução horizontal de 0,1° disponível [aqui](https://www.dropbox.com/scl/fi/vqt7qizjnhnzbfkfgo59w/pr_19610101_19801231_BR-DWGD_UFES_UTEXAS_v_3.2.3.nc?rlkey=1ft60lo1qpb3wkaylyfs4genu&st=9migaqqy&dl=1) (tamanho 2.1 GB).
-   
-   a. Importe os dados para o R, converta-os para *data frame* e verifique o número de colunas e linhas resultantes. 
+
+   a. Importe os dados para o R, converta-os para *data frame* e verifique o número de colunas e linhas resultantes.
 
 ```{r}
 # sua resposta aqui
@@ -385,15 +385,3 @@ str(wtd_df)
 ```{r}
 # sua resposta aqui
 ```
-
-
-
-
-
-
-
-
-
-
-
-
