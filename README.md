@@ -1,4 +1,4 @@
-# adar-202002-listas
+# adar-listas-2026
 Repo para templates das listas de exercícios do curso ADAR e correção das listas dos alunos.
 
 Os quatro templates estão em `templates/`, no formato Quarto (`.qmd`), com
