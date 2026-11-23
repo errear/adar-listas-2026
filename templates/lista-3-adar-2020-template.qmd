@@ -34,7 +34,7 @@ tibble [923 × 4] (S3: tbl_df/tbl/data.frame)
 - - -
 
 
-2. a. Leia diretamente no R os dados texto não estruturados disponíveis neste [link](https://raw.githubusercontent.com/lhmet/ADARdata/refs/heads/master/inst/extdata/previsoes-enos.txt) e salve-os em um arquivo texto nomeado `previsoes-enos.txt`, mantendo a formatação original dos dados.
+2. a. Leia diretamente no R por linhas os dados texto não estruturados disponíveis neste [link](https://raw.githubusercontent.com/lhmet/ADARdata/refs/heads/master/inst/extdata/previsoes-enos.txt) e usando o R, salve-os em um arquivo texto nomeado `previsoes-enos.txt`, mantendo a formatação original dos dados.
 
 
 ```{r}
@@ -133,7 +133,7 @@ tibble [923 × 4] (S3: tbl_df/tbl/data.frame)
 
 ```
 #str(aao)
-'data.frame':	42 obs. of  13 variables:
+'data.frame':	48 obs. of  13 variables:
  $ Ano: int  1979 1980 1981 1982 1983 1984 1985 1986 1987 1988 ...
  $ Jan: num  0.209 -0.447 0.231 -0.554 -1.34 ...
  $ Feb: num  0.356 -0.98 0.039 0.277 -1.081 ...
@@ -202,7 +202,7 @@ structure(list(nomes_originais = c(
 
 
 
-   Como não faz sentido termos variáveis com nomes repetidos, use os novos nomes apendando a eles um "_" (*underline*) a hora correspondente à observação (e.g.: `velmax_ms_12`). A estrutura dos dados com os novos nomes é representada simplificadamente como mostrado abaixo. Note que `N` e a hora inicial podem diferir para alguma(s) variável(is).
+   Como não faz sentido termos variáveis com nomes repetidos, use os novos nomes apendando a eles um "_" (*underline*) a hora correspondente à observação (p.ex.: `velmax_ms_12`). A estrutura dos dados com os novos nomes é representada simplificadamente como mostrado abaixo. Note que `N` e a hora inicial podem diferir para alguma(s) variável(is).
 
 
 ```
@@ -242,14 +242,7 @@ tibble [730 x 183] (S3: tbl_df/tbl/data.frame)
 Baixando os dados.
 
 ```{r}
-#| eval: false
-getwd()
 # sua resposta aqui
-link <- "https://www.dropbox.com/s/w3wp6iwxqex95ep/S_America_model_wtd_v2.nc?dl=1"
-download.file(link,
-              destfile = "S_America_model_wtd_v2.nc",
-              mode = "wb"
-              )
 ```
 
 
@@ -265,32 +258,13 @@ download.file(link,
 
 ```{r}
 ## sua resposta aqui
-# library(raster)
-# #wtd <- brick("S_America_model_wtd_v2.nc")
-# wtd <- raster("S_America_model_wtd_v2.nc")
-# wtd
 ```
 
-   d. Converta os dados importados em um quadro de dados (*data frame*) incluindo as coordenadas das células do raster e ignorando as células sem informação (oceanos).
+   d. Converta os dados importados em um quadro de dados (*data frame*) incluindo as coordenadas das células do raster e ignorando as células sem informação (oceanos). A conversão pode levar alguns
 
 
 ```{r}
-#| eval: false
-
-library(tictoc)
-tic()
-wtd_df <- as.data.frame(wtd, xy = TRUE, na.rm = TRUE)
-toc()
-str(wtd_df)
-
-# system.time(
-#   wtd_df <- as.data.frame(wtd, xy = TRUE, na.rm = TRUE)
-# )
-
-#wtd_df
-#head(wtd_df)
-#tail(wtd_df)
-
+# sua resposta aqui
 ```
 
    e. Altere os nomes das colunas do quadro de dados para "wtd", "lon", "lat"
@@ -308,47 +282,47 @@ str(wtd_df)
 
 - - -
 
-7. a. Importe da *web* diretamente para o R os dados do índice multivariado em tempo real da Oscilação de Madden-Julian disponível em http://www.bom.gov.au/climate/mjo/graphics/rmm.74toRealtime.txt.
+7. a. Importe da *web* diretamente para o R os dados do índice multivariado em tempo real da Oscilação de Madden-Julian disponível em https://raw.githubusercontent.com/lhmet/ADARdata/refs/heads/master/inst/extdata/rmm.74toRealtime.txt.
+Os nomes das variáveis devem ser `year,  month,  day, RMM1, RMM2, phase, amplitude, status`. Mostre os 10 primeiros valores de todas variáveis (os quais são mostrados abaixo para conferência).
+
+```{r}
+#    year month day       RMM1     RMM2 phase amplitude                       status
+# 1  1974     6   1  1.6344700 1.203040     5  2.029480 WH04_method:_OLR_&_NCEP_wind
+# 2  1974     6   2  1.6028900 1.015120     5  1.897290 WH04_method:_OLR_&_NCEP_wind
+# 3  1974     6   3  1.5162500 1.085510     5  1.864760 WH04_method:_OLR_&_NCEP_wind
+# 4  1974     6   4  1.5098100 1.035730     5  1.830920 WH04_method:_OLR_&_NCEP_wind
+# 5  1974     6   5  1.5590600 1.305180     5  2.033260 WH04_method:_OLR_&_NCEP_wind
+# 6  1974     6   6  1.2062600 1.628890     6  2.026900 WH04_method:_OLR_&_NCEP_wind
+# 7  1974     6   7  0.6111010 1.722480     6  1.827670 WH04_method:_OLR_&_NCEP_wind
+# 8  1974     6   8  0.3263950 1.778180     6  1.807890 WH04_method:_OLR_&_NCEP_wind
+# 9  1974     6   9  0.0938282 1.356940     6  1.360180 WH04_method:_OLR_&_NCEP_wind
+# 10 1974     6  10 -0.0861263 0.775476     7  0.780244 WH04_method:_OLR_&_NCEP_wind
+```
+
+   b. Escreva os dados importados em um arquivo excel no **formato `xls`** e nomeado `mjo.xls`. Dê uma olhada [nesta seção](https://lhmet.github.io/adar-ebook/arquivos-excel.html#export-xls) do livro.
 
 ```{r}
 # sua resposta aqui
 ```
 
-   b. Defina o nome das variáveis como:  year  month  day  RMM1  RMM2  phase  amplitude status. Tente obter os nomes das variáveis do próprio link para os dados (a releitura [desta seção](https://lhmet.github.io/adar-ebook/arquivos-texto.html#arquivos-texto-n%C3%A3o-estruturados) do livro e [deste apêndice](https://lhmet.github.io/adar-ebook/amostras-pequenas-de-dados.html) pode ajudar). Mostre os 10 primeiros valores da variável `RMM1`.
+   c. Importe no R o arquivo excel nomeado `mjo.xls` e mostre qual a classe dos dados importados.
 
 ```{r}
 # sua resposta aqui
 ```
 
-   c. Escreva os dados importados em um arquivo excel no **formato `xls`** e nomeado `mjo.xls`. Dê uma olhada [nesta seção](https://lhmet.github.io/adar-ebook/arquivos-excel.html#export-xls) do livro.
+   d. Mostre as primeiras e as últimas 10 linhas dos dados.
 
 ```{r}
 # sua resposta aqui
 ```
 
-   d. Importe no R o arquivo excel nomeado `mjo.xls` e mostre qual a classe dos dados importados.
+   e. Qual o código para mostrar quantas linhas e colunas possui a tabela de dados.
 
 ```{r}
 # sua resposta aqui
 ```
 
-   e. Mostre as primeiras e as últimas 10 linhas dos dados.
-
-```{r}
-# sua resposta aqui
-```
-
-   f. Qual o código para mostrar quantas linhas e colunas possui a tabela de dados.
-
-```{r}
-# sua resposta aqui
-```
-
-   g. Interprete a saída da `glimpse()` do pacote **dplyr** aplicada aos dados importados. O resultado parece com o de alguma outra função que você já conhece, qual?
-
-```{r}
-# sua resposta aqui
-```
 
 
 
@@ -365,22 +339,6 @@ str(wtd_df)
 
 9. Importe no R o arquivo excel com a climatologia das temperaturas mínimas do INMET no período de 1981-2010, disponível
 [aqui](https://portal.inmet.gov.br/uploads/normais/Normal-Climatologica-TMIN.xlsx). Mostre a estrutura dos dados e certifique-se de as colunas dos meses e ano são numéricas.
-
-```{r}
-# sua resposta aqui
-```
-
-- - -
-
-10. Faça *download* de dados gradeados de precipitação diário para todo Brasil com resolução horizontal de 0,1° disponível [aqui](https://www.dropbox.com/scl/fi/vqt7qizjnhnzbfkfgo59w/pr_19610101_19801231_BR-DWGD_UFES_UTEXAS_v_3.2.3.nc?rlkey=1ft60lo1qpb3wkaylyfs4genu&st=9migaqqy&dl=1) (tamanho 2.1 GB).
-
-   a. Importe os dados para o R, converta-os para *data frame* e verifique o número de colunas e linhas resultantes.
-
-```{r}
-# sua resposta aqui
-```
-
-   b. Compare as dimensões do *quadro de dados* com as dimensões do objeto importado, o número de linhas e de colunas do *quadro de dados* correspondem a quais propriedades ou dimensões do objeto importado? Faça essa comparação usando os diferentes valores lógicos para os argumentos `na.rm` e `xy`.
 
 ```{r}
 # sua resposta aqui
