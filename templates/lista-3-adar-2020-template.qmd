@@ -1,7 +1,7 @@
 ---
 title: "Lista de Exercícios 3 - ADAR/UFSM"
 author: "Seu nome aqui"
-date: "2021-01-08"
+date: "2026-11-23"
 format:
   html:
     embed-resources: true

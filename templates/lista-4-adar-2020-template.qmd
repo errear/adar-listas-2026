@@ -8,7 +8,7 @@ format:
 engine: knitr
 ---
 
-<!-- 
+<!--
 Lista 4 original foi dividida em duas:
 uma com exercícios tidyr e outra com dplyr
 -->
@@ -34,7 +34,7 @@ uma com exercícios tidyr e outra com dplyr
 
 
 
-A estrutura esperada dos dados processados é mostrada abaixo: 
+A estrutura esperada dos dados processados é mostrada abaixo:
 
 ```
 Rows: 36
@@ -88,7 +88,7 @@ $ prec <dbl> 0.0000000, 0.0000000, 0.0000000, 0.4484863, 2.3515625, 4...
 
 - - -
 
-4. a. Coloque os dados meteorológicos diários da estação meteorológica de Santa Maria no formato arrumado. 
+4. a. Coloque os dados meteorológicos diários da estação meteorológica de Santa Maria no formato arrumado.
 
 
 ```
@@ -104,8 +104,8 @@ $ prec <dbl> 0.0000000, 0.0000000, 0.0000000, 0.4484863, 2.3515625, 4...
 #>  7 83936 tmax        4  2010  34.4  28.6  21    24.2  23.4  24    24.6  26    27.6  30.2
 #>  8 83936 tmin        4  2010  17.5  21    20.6  17.6  15    10.8  11.7  11.3  12.7  11.6
 #>  9 83936 tmax        5  2010  27    26.4  20.2  22.8  25.4  17.4  19.6  19.8  17.2  17.4
-#> 10 83936 tmin        5  2010   7.2   7    13    16.2  14.1  11.5  14.4  11     9.9   9  
-#> 11 83936 tmax        6  2010  19.2  23.8  17.2  18.6  21.2  20.2  17.8  15.4  16.2  19  
+#> 10 83936 tmin        5  2010   7.2   7    13    16.2  14.1  11.5  14.4  11     9.9   9
+#> 11 83936 tmax        6  2010  19.2  23.8  17.2  18.6  21.2  20.2  17.8  15.4  16.2  19
 #> 12 83936 tmin        6  2010   4.1   8.8   9.1  15.2  11.4   6.1   6.3   7.3   5.6   3.5
 #> # … with 21 more variables: d11 <dbl>, d12 <dbl>, d13 <dbl>, d14 <dbl>, d15 <dbl>,
 #> #   d16 <dbl>, d17 <dbl>, d18 <dbl>, d19 <dbl>, d20 <dbl>, d21 <dbl>, d22 <dbl>,
@@ -140,7 +140,7 @@ $ tmin  <dbl> 17.9, 21.4, 21.6, 23.4, 23.2, 21.8, 18.0, 19.4...
 
 - - -
 
-5. Com os dados obtidos na questão 4c: 
+5. Com os dados obtidos na questão 4c:
 
 
 
@@ -155,7 +155,7 @@ $ tmin  <dbl> 17.9, 21.4, 21.6, 23.4, 23.2, 21.8, 18.0, 19.4...
 
 
 
-   c. Filtre os dados obtidos em **(b)** de forma a descobrir as datas em que as observações de `tmax` ou `tmin` são faltantes. Mostre o **`tibble`** filtrado com as datas e explique o porquê de seus valores. *DICA: quantas observações são esperadas por ano?*. 
+   c. Filtre os dados obtidos em **(b)** de forma a descobrir as datas em que as observações de `tmax` ou `tmin` são faltantes. Mostre o **`tibble`** filtrado com as datas e explique o porquê de seus valores. *DICA: quantas observações são esperadas por ano?*.
 
 
 
@@ -215,7 +215,7 @@ $ duracao  <chr> "1h", "1h", "8h"
 
 8. Combine as 2 tabelas abaixo de forma que:
 
-  a. A tabela resultante contenha todas as datas compreendidas pelas duas tabelas (e em ordem cronológica) e as observações de umidade do solo (`theta`) sejam preenchidas com `NA`. 
+  a. A tabela resultante contenha todas as datas compreendidas pelas duas tabelas (e em ordem cronológica) e as observações de umidade do solo (`theta`) sejam preenchidas com `NA`.
 
 
 
@@ -226,12 +226,12 @@ $ duracao  <chr> "1h", "1h", "8h"
 
 
   b. a tabela resultante contenha exatamente as datas da tabela `data_comp` (em ordem cronológica) e as observações de umidade do solo (`theta`) sejam preenchidas com `NA`.
-  
 
 
 
 
-- - - 
+
+- - -
 
 9. Utilizando os dados horários de estações meteorológicas automáticas (EMA) do RS (`dados_rs_08_16`), determine a data inicial, final e o período de dados (em anos) de cada estação (identificada pela variável `site`).
 
@@ -252,8 +252,8 @@ $ duracao  <chr> "1h", "1h", "8h"
 
 - - -
 
-11. Com o resultado da questão anterior, adicione uma variável indicativa da porcentagem média de observações válidas de todas variáveis. Ordene esta tabela em ordem decrescente da disponibilidade média de observações. 
-  
+11. Com o resultado da questão anterior, adicione uma variável indicativa da porcentagem média de observações válidas de todas variáveis. Ordene esta tabela em ordem decrescente da disponibilidade média de observações.
+
 
 
 
@@ -261,7 +261,7 @@ $ duracao  <chr> "1h", "1h", "8h"
 
 - - -
 
-12. Para a EMA de Santa Maria (ver `info_emas_rs_08_16`) obtenha o ciclo diurno médio da temperatura do ar e a porcentagem de dados válidos usados para compor a `tair` média de cada hora. 
+12. Para a EMA de Santa Maria (ver `info_emas_rs_08_16`) obtenha o ciclo diurno médio da temperatura do ar e a porcentagem de dados válidos usados para compor a `tair` média de cada hora.
 
 > Dica: Para extrair as horas das datas use a função `lubridate::hour(date)`.
 
@@ -289,7 +289,7 @@ $ duracao  <chr> "1h", "1h", "8h"
 
 ```
 # A tibble: 8 x 7
-  date                 tmax  tmin   mes site 
+  date                 tmax  tmin   mes site
   <dttm>              <dbl> <dbl> <dbl> <chr>
 1 2009-10-30 00:00:00  35.8  20.4    10 83936
 2 2009-10-31 00:00:00  36.8  21.8    10 83936
@@ -302,12 +302,3 @@ $ duracao  <chr> "1h", "1h", "8h"
 # ... with 2 more variables: tmin_abs <dbl>,
 #   tmax_abs <dbl>
 ```
-
-
-
-
-
-
-
-
-
