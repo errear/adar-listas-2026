@@ -283,20 +283,10 @@ Baixando os dados.
 - - -
 
 7. a. Importe da *web* diretamente para o R os dados do índice multivariado em tempo real da Oscilação de Madden-Julian disponível em https://raw.githubusercontent.com/lhmet/ADARdata/refs/heads/master/inst/extdata/rmm.74toRealtime.txt.
-Os nomes das variáveis devem ser `year,  month,  day, RMM1, RMM2, phase, amplitude, status`. Mostre os 10 primeiros valores de todas variáveis (os quais são mostrados abaixo para conferência).
+Os nomes das variáveis devem ser `year,  month,  day, RMM1, RMM2, phase, amplitude, status`. Mostre os 10 primeiros valores de todas variáveis.
 
 ```{r}
-#    year month day       RMM1     RMM2 phase amplitude                       status
-# 1  1974     6   1  1.6344700 1.203040     5  2.029480 WH04_method:_OLR_&_NCEP_wind
-# 2  1974     6   2  1.6028900 1.015120     5  1.897290 WH04_method:_OLR_&_NCEP_wind
-# 3  1974     6   3  1.5162500 1.085510     5  1.864760 WH04_method:_OLR_&_NCEP_wind
-# 4  1974     6   4  1.5098100 1.035730     5  1.830920 WH04_method:_OLR_&_NCEP_wind
-# 5  1974     6   5  1.5590600 1.305180     5  2.033260 WH04_method:_OLR_&_NCEP_wind
-# 6  1974     6   6  1.2062600 1.628890     6  2.026900 WH04_method:_OLR_&_NCEP_wind
-# 7  1974     6   7  0.6111010 1.722480     6  1.827670 WH04_method:_OLR_&_NCEP_wind
-# 8  1974     6   8  0.3263950 1.778180     6  1.807890 WH04_method:_OLR_&_NCEP_wind
-# 9  1974     6   9  0.0938282 1.356940     6  1.360180 WH04_method:_OLR_&_NCEP_wind
-# 10 1974     6  10 -0.0861263 0.775476     7  0.780244 WH04_method:_OLR_&_NCEP_wind
+# sua resposta aqui
 ```
 
    b. Escreva os dados importados em um arquivo excel no **formato `xls`** e nomeado `mjo.xls`. Dê uma olhada [nesta seção](https://lhmet.github.io/adar-ebook/arquivos-excel.html#export-xls) do livro.
